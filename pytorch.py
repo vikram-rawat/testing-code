@@ -4,9 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Generate random data
-X = np.random.rand(100, 1) * 10
+X = np.arange(0.001,0.101, 0.001).reshape(-1,1)
 y = 2 * X + 1 
 
+len(X)
 # Convert data to tensors
 X_tensor = torch.from_numpy(X).float()
 y_tensor = torch.from_numpy(y).float()
@@ -25,10 +26,10 @@ model = LinearRegression()
 
 # Define loss function and optimizer
 criterion = nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
 
 # Train model
-num_epochs = 1000
+num_epochs = 12000
 for epoch in range(num_epochs):
     # Forward pass
     y_pred = model(X_tensor)
