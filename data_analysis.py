@@ -22,6 +22,8 @@ sales_data.info()
 sales_data.shape
 sales_data.describe().Day
 
+sales_data.corr()
+
 sales_data.iloc[:, :]
 
 sales_data["Unit_Cost"].describe()
@@ -34,15 +36,3 @@ sales_data["Unit_Cost"].value_counts().describe()
 
 sales_data["Unit_Cost"].value_counts().plot(kind="pie")
 sales_data["Unit_Cost"].value_counts().plot.pie()
-
-df = pd.DataFrame({'mass': [0.330, 4.87 , 5.97],
-                   'radius': [2439.7, 6051.8, 6378.1]},
-                  index=['Mercury', 'Venus', 'Earth'])
-plot = df.plot.pie(y='mass', figsize=(5, 5))
-
-import pandas as pd
-
-df = pd.DataFrame([2,5,67,2,3,5,23,124])
-plot = df.hist()
-plot.show()
-plt.show()
